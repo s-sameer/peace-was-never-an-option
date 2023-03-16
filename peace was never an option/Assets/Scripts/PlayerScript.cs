@@ -24,7 +24,7 @@ public class PlayerScript : MonoBehaviour
         {
             logic.increaseScore();
         }
-        if (transform.position.y > 5.7)
+        if (transform.position.y > 8)
         {
             logic.gameOver();
             playerIsAlive = false;
@@ -33,7 +33,7 @@ public class PlayerScript : MonoBehaviour
 
     public void move()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if ((Input.GetKeyDown(KeyCode.Space)) || (Input.GetKeyDown(KeyCode.UpArrow)))
         {
             myRigidBody.velocity = Vector2.up * flapStrength;
             animator.SetBool("touchingGround", false);
